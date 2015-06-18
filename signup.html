@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Homepage</title>
+    <title>New Signup Page</title>
  
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -23,8 +23,8 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item active" href="index.html">Home</a>
-          <a class="blog-nav-item" href="signup.html">New Signup</a>
+          <a class="blog-nav-item" href="index.html">Home</a>
+          <a class="blog-nav-item active" href="signup.html">New Signup</a>
           <a class="blog-nav-item" href="login.html">Login</a>
           <a class="blog-nav-item" href="#">Forgot ID/Password</a>
           <a class="blog-nav-item" href="admin.html">Admin</a>
@@ -35,8 +35,8 @@
     <div class="container">
 
       <div class="blog-header">
-        <h1 class="blog-title">Testing Online Form Page</h1>
-        <p class="lead blog-description">The official testing page with Bootstrap.</p>
+        <h1 class="blog-title">Testing Sign Up Page</h1>
+        <p class="lead blog-description">Under Construction!</p>
       </div>
 
       <div class="row">
@@ -75,16 +75,24 @@
 
 
 
-<!-- script to call data from parse.com (testing)-->
 
-<script id="blogs-tpl" type="text/x-handlebars-template">
-   {{#each blog}}
-    <div class="blog-post">
-        <h2 class="blog-post-title"><a href="#">{{task}}</a></h2>
-        <p class="blog-post-meta">At {{time}} by {{author}}</p>
-        <div>{{{content}}}</div>
-    </div>
-    {{/each}}
+<!-- script to add button to LoginView (testing3)-->
+
+<script id="login-tpl" type="text/x-handlebars-template">
+    <form class="form-signin" role="form">
+        <h2 class="form-signin-heading">Sign up as member!</h2>
+        <input type="text" name="username" class="form-control" placeholder="Username" required="" autofocus="">
+        <input type="password" name="password" class="form-control" placeholder="Password" required="">
+        <input type="email" name="email" class="form-control" placeholder="Email address" required="" autofocus="">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up Now</button>
+    </form>
+</script>
+
+<!-- script to Display username to WelcomeView (testing4)--> 
+<script id="welcome-tpl" type="text/x-handlebars-template">
+    <h2>Welcome, {{username}}!</h2>
+    <p>You have signed up successfully, thank you for your support!</p>
+<!--   <button class="add-blog btn btn-lg btn-primary">Button for future</button> -->
 </script>
 
 
@@ -95,8 +103,7 @@
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/blog.js"></script>
-
+   <script src="js/signup.js"></script>
 
 
     <!-- Parse.js -->

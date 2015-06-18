@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Homepage</title>
+    <title>Admin Page</title>
  
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -24,8 +24,8 @@
       <div class="container">
         <nav class="blog-nav">
           <a class="blog-nav-item active" href="index.html">Home</a>
-          <a class="blog-nav-item" href="signup.html">New Signup</a>
-          <a class="blog-nav-item" href="login.html">Login</a>
+          <a class="blog-nav-item" href="#">New Registration</a>
+          <a class="blog-nav-item" href="#">Login</a>
           <a class="blog-nav-item" href="#">Forgot ID/Password</a>
           <a class="blog-nav-item" href="admin.html">Admin</a>
         </nav>
@@ -35,15 +35,17 @@
     <div class="container">
 
       <div class="blog-header">
-        <h1 class="blog-title">Testing Online Form Page</h1>
-        <p class="lead blog-description">The official testing page with Bootstrap.</p>
+        <h1 class="blog-title">Testing Admin Page</h1>
+        <p class="lead blog-description">Under Construction!</p>
       </div>
 
       <div class="row">
 
         <div class="col-sm-8 blog-main">
-                 <div class="main-container"></div>
-          </div>	
+                 <div class="main-container">
+
+                 </div>
+        </div>	
 
 
 
@@ -76,13 +78,12 @@
 
 
 <!-- script to call data from parse.com (testing)-->
-
 <script id="blogs-tpl" type="text/x-handlebars-template">
    {{#each blog}}
     <div class="blog-post">
         <h2 class="blog-post-title"><a href="#">{{task}}</a></h2>
-        <p class="blog-post-meta">At {{time}} by {{author}}</p>
-        <div>{{{content}}}</div>
+        <p class="blog-post-meta">At time by an author</p>
+        
     </div>
     {{/each}}
 </script>
@@ -95,8 +96,7 @@
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/blog.js"></script>
-
+    <script src="js/admin.js"></script>
 
 
     <!-- Parse.js -->
