@@ -39,8 +39,8 @@ $(function() {
 
             	//},
 				
-			// My Parse signup test script
-			Parse.User.signUp(username, password, { ACL: new Parse.ACL() }, {
+			// My Parse signup test script with email field added
+			Parse.User.signUp(username, password, email, { ACL: new Parse.ACL() }, {
         		success: function(user) {
 				alert('Sign up successfully');
 				var welcomeView = new WelcomeView({ model: user });
