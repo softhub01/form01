@@ -14,7 +14,7 @@ $(function() {
 
 
 	var LoginView = Parse.View.extend({
-    template: Handlebars.compile($('#signup-tpl').html()),
+    template: Handlebars.compile($('#login-tpl').html()),
     events: {
         'submit .form-signin': 'login'
     	},
@@ -26,7 +26,7 @@ $(function() {
         	// Get data from the form and put them into variables
         	var data = $(e.target).serializeArray(),
             	username = data[0].value,
-            	password = data[1].value,
+            	password = data[1].value;
 				email = data[2].value;
  
         	// Call Parse Login function with those variables
@@ -40,9 +40,9 @@ $(function() {
             	//},
 				
 			// My Parse signup test script with email field added
-			Parse.User.signUp(username, password, {email:email, ACL: new Parse.ACL() }, {
+			Parse.User.signUp(username, password, email, { ACL: new Parse.ACL() }, {
         		success: function(user) {
-				alert('Sign up successfully, please check your email now for verification, Thank you!');
+				alert('Sign up successfully');
 				var welcomeView = new WelcomeView({ model: user });
     			welcomeView.render();
     			$('.main-container').html(welcomeView.el);

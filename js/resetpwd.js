@@ -16,45 +16,40 @@ $(function() {
 	var LoginView = Parse.View.extend({
     template: Handlebars.compile($('#login-tpl').html()),
     events: {
-        'submit .form-login': 'login'
+        'submit .form-login': 'reset'
     	},
-    	login: function(e) {
+    	reset: function(e) {
  
         	// Prevent Default Submit Event
         	e.preventDefault();
  
         	// Get data from the form and put them into variables
-        	var data = $(e.target).serializeArray(),
-            	username = data[0].value,
-            	password = data[1].value;
- 
-						
-        	// Call Parse Login function with those variables-partially work
-        	Parse.User.logIn(username, password, {
-            	// If the username and password matches
-            	success: function(user) {
-					// Verified email status before user can continue to login
-					// If email has been verified - under testing stage
-					// if(user.getBoolean("emailVerified") == true) { 
-                       /* if user exists and is authenticated, notify user */
-					   alert('Great1!');
-					   var welcomeView = new WelcomeView({ model: user });
-    				   welcomeView.render();
-    				   $('.main-container').html(welcomeView.el);
-					   
-					//}
-					// This part is NOT WORKING!!!!
-					//if(user.getBoolean("emailVerified") == false) {
-					//	alert('You have not verified your email, please check your email now, thanks!');
-					//}
-						
-            	},
-            	// If there is an error
-            	error: function(user, error) {
-                	console.log(error);
-					alert('Invalid Username or Password!');
-            	}
-        	});
+        	//var data = $(e.target).serializeArray(),
+            //	email = data[0].value;
+			var self=this;
+			var email=this.$("[name=email]").val();
+			
+			// Test script to reset password
+			//function resetPassword(){
+			   	//var email = document.forms["form-login"]["email"].value;
+			if(email==="") return;
+			
+				Parse.User.requestPasswordReset(email, {
+					success:function() {
+                    window.alert("Password reset link has been sent to "+ email);
+					var welcomeView = new WelcomeView({ model: user });
+    				    welcomeView.render();
+    				    $('.main-container').html(welcomeView.el);
+                    return true;
+					},
+					error:function(error) {
+                    window.alert(error.message);
+                    return false;
+					}
+				});
+			
+			
+			       	
     	},
         	render: function(){
         	this.$el.html(this.template());

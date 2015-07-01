@@ -28,26 +28,17 @@ $(function() {
             	username = data[0].value,
             	password = data[1].value;
  
-						
-        	// Call Parse Login function with those variables-partially work
+        	// Call Parse Login function with those variables
         	Parse.User.logIn(username, password, {
             	// If the username and password matches
             	success: function(user) {
-					// Verified email status before user can continue to login
-					// If email has been verified - under testing stage
-					// if(user.getBoolean("emailVerified") == true) { 
-                       /* if user exists and is authenticated, notify user */
-					   alert('Great1!');
-					   var welcomeView = new WelcomeView({ model: user });
-    				   welcomeView.render();
-    				   $('.main-container').html(welcomeView.el);
-					   
-					//}
-					// This part is NOT WORKING!!!!
-					//if(user.getBoolean("emailVerified") == false) {
-					//	alert('You have not verified your email, please check your email now, thanks!');
-					//}
-						
+					//If email is verified 
+					if(user.getBoolean("emailVerified") == true) { 
+                        /* if user exists and is authenticated, notify user */
+						var welcomeView = new WelcomeView({ model: user });
+						welcomeView.render();
+						$('.main-container').html(welcomeView.el);
+					}
             	},
             	// If there is an error
             	error: function(user, error) {
@@ -58,7 +49,7 @@ $(function() {
     	},
         	render: function(){
         	this.$el.html(this.template());
-			}
+    	}
 	})
 	    
 		var loginView = new LoginView();
