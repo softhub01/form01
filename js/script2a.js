@@ -52,7 +52,7 @@
 					// Continue to launch welcome page is email has been verified!
 					//checkLogin();
 					alert("Login Successfully!");
-					window.location = "privatepage.html";
+					window.location = "mainpage.html";
 					}  
 					
 					// If user does not verified the email, will prompt message to tell user!!!!
