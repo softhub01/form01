@@ -9,8 +9,7 @@ $(function() {
     Parse.$ = jQuery;
  
     // Replace this line with the one on your Quickstart Guide Page
-    Parse.initialize("cawLbOWUk15FFQ9xj7kQOGqEs5jS7QQZ1XurDSWp", "emTwPf0PO6aTvZNubBExHUlbDn6R65Vj2UqaJMF3");
-	
+	Parse.initialize("6SDrpp6FgvPQpKQCmj4CQ719sxVyW2leWtGuVDh9", "IY1N0Bo0OxufSKFxtdt7XOrTTdhq2T1z1NSc0utz");
 
 	
 	var LoginView = Parse.View.extend({

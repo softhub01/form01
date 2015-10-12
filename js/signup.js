@@ -23,12 +23,22 @@ $(function() {
         	// Prevent Default Submit Event
         	e.preventDefault();
  
+			// Declare variables
+			var username = $("#signup-name").val();
+			var password = $("#signup-password").val();
+			var email = $("#email").val();
+			
         	// Get data from the form and put them into variables
-        	var data = $(e.target).serializeArray(),
-            	username = data[0].value,
-            	password = data[1].value,
-				email = data[2].value;
- 
+        	//var data = $(e.target).serializeArray(),
+            	//username = data[0].value,
+            	//password = data[1].value,
+				//email = data[2].value;
+				
+				
+			var user = new Parse.User();
+			user.set("username", username);
+			user.set("password", password);
+			user.set("email", email);
         	// Call Parse Login function with those variables
         	//Parse.User.logIn(username, password, {
             	// If the username and password matches
@@ -40,20 +50,21 @@ $(function() {
             	//},
 				
 			// My Parse signup test script with email field added
-			Parse.User.signUp(username, password, {email:email, ACL: new Parse.ACL() }, {
-        		success: function(user) {
-				alert('Sign up successfully, please check your email now for verification, Thank you!');
-				var welcomeView = new WelcomeView({ model: user });
-    			welcomeView.render();
-    			$('.main-container').html(welcomeView.el);
-				},
+			//Parse.User.signUp(username, password, {email:email, ACL: new Parse.ACL() }, {
+				user.signUp(null, {
+        		 success: function(user) {
+				  alert('Sign up successfully, please check your email now for verification, Thank you!');
+				  var welcomeView = new WelcomeView({ model: user });
+    			  welcomeView.render();
+    			  $('.main-container').html(welcomeView.el);
+				 },
 				
-            	// If there is an error
-            	error: function(user, error) {
-               	console.log(error);
-				alert('Invalid Username or Password!');
-            	}
-        	});
+            	 // If there is an error
+            	 error: function(user, error) {
+               	  console.log("sign-up error: "+error.message);
+				  alert('Invalid Username or Password!');
+            	 }
+        	    });
     	},
         	render: function(){
         	this.$el.html(this.template());
