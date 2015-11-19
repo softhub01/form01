@@ -73,6 +73,11 @@
 				<div>
 					<p><input type="text" name="fileNo" id="fileNo" placeholder="file No" onkeyup="validateFileNo()" required><span id="commentfileNo"></span>
 				</div>
+				
+				<div>
+					<p><Label>Project Due Date:</label>
+					<input type="date" name="dateDue" id="dateDue" placeholder="Project Due Date" required></p>
+				</div>				
 				</br>
 
 <div class="container">
@@ -173,7 +178,7 @@
 				<td>2A. Request and collect information from the Purchaser.</td>
 				<td><input type="date" name="date1" class="form-control" id="date1" placeholder="date of deadline"></td>
 				<td><input type="date" name="date2" class="form-control"id="date2" placeholder="date of completion"></td>
-				<td><input type="checkbox" name="status1" id="status1" value="false"></td>
+				<td><input type="text" name="status1" id="status1" value="" readonly></td>
 				</tr>
  
   				<tr>
@@ -188,14 +193,14 @@
 				<td>    - Negotiate terms and conditions of SPA with Vendor's solicitor.</td>
 				<td><input type="date" class="form-control" id="date3" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date4" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status2" value="false"></td>
+				<td><input type="text" id="status2" value="" readonly></td>
 				</tr>
 
  				<tr>
 				<td>    - Finalise terms and conditions of SPA with Vendor's solicitor.</td>
 				<td><input type="date" class="form-control" id="date5" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date6" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status3" value="false"></td>
+				<td><input type="text" id="status3" value="" readonly></td>
 				</tr>
  
  				<tr>
@@ -203,35 +208,35 @@
 					with the deposit to the Vendor's solicitor.</td>
 				<td><input type="date" class="form-control" id="date7" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date8" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status4" value="false"></td>
+				<td><input type="text" id="status4" value="" readonly></td>
 				</tr>
  
  				<tr>
 				<td>2D. Received SPA duly executed by Vendor from the Vendor's solicitor, send SPA for stamping.</td>
 				<td><input type="date" class="form-control" id="date9" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date10" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status5" value="false"></td>
+				<td><input type="text" id="status5" value="" readonly></td>
 				</tr>
  
  				<tr>
 				<td>2E. Forward a copy of the duly stamped SPA to the Vendor's solicitor.</td>
 				<td><input type="date" class="form-control" id="date11" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date12" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status6" value="false"></td>
+				<td><input type="text" id="status6" value="" readonly></td>
 				</tr>
  
  				<tr>
 				<td>2F. Received letter (request confirmation and documents) from the Banker's solicitor.</td>
 				<td><input type="date" class="form-control" id="date13" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date14" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status7" value="false"></td>
+				<td><input type="text" id="status7" value="" readonly></td>
 				</tr>
  
  				<tr>
 				<td>2G. Pending ctc of the consent to transfer in favour of the Purchaser from the Vendor's solicitor.</td>
 				<td><input type="date" class="form-control" id="date15" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date16" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status8" value="false"></td>
+				<td><input type="text" id="status8" value="" readonly></td>
 				</tr>
 
   				<tr>
@@ -240,35 +245,35 @@
 					 sum (if any) to the Vendor's solicitor).</td>
 				<td><input type="date" class="form-control" id="date17" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date18" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status9" value="false"></td>
+				<td><input type="text" id="status9" value="" readonly></td>
 				</tr>
  
   				<tr>
 				<td>2I. Forward the duly paid full stamp duty of MOT together with registration fee to the Banker's solicitor.</td>
 				<td><input type="date" class="form-control" id="date19" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date20" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status10" value="false"></td>
+				<td><input type="text" id="status10" value="" readonly></td>
 				</tr>
 
   				<tr>
 				<td>2J. Follow up with Banker's solicitor on the releasing of the loan sum.</td>
 				<td><input type="date" class="form-control" id="date21" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date22" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status11" value="false"></td>
+				<td><input type="text" id="status11" value="" readonly></td>
 				</tr>
  
   				<tr>
 				<td>2K. After received confirmation on releasing of the full loan sum, waiting vacant possession to be delivered by the Vendor's Solicitors.</td>
 				<td><input type="date" class="form-control" id="date23" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date24" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status12" value="false"></td>
+				<td><input type="text" id="status12" value="" readonly></td>
 				</tr>
 
   				<tr>
 				<td>2L. Keys / vacant possession hand over to the Purchaser.</td>
 				<td><input type="date" class="form-control" id="date25" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date26" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status13" value="false"></td>
+				<td><input type="text" id="status13" value="" readonly></td>
 				</tr>
 
 				

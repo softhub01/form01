@@ -72,6 +72,7 @@
 				
 			
 					data.fileNo = $("#fileNo").val();
+					data.dateDue = $("#dateDue").val();
 					
 					// Section 1
 					data.pname = $("#pname").val();
@@ -88,8 +89,6 @@
 					data.vbtel = $("#vbtel").val();
 					data.dname = $("#dname").val();
 					data.dtel = $("#dtel").val();
-					//data.date3 = $("#date3").val(); for future use
-					//data.date4 = $("#date4").val(); for future use					
 					
 					//Section2 and onwards
 					data.date1 = $("#date1").val();
@@ -145,6 +144,531 @@
 					
 					
 					data.user = Parse.User.current();
+					
+					
+					//Get today's date in string
+					var todayDate = new Date();
+					var m = todayDate.getMonth();
+					var d = todayDate.getDate()+1;
+					var y = todayDate.getFullYear();					
+
+					var todayDateText = new Date(y,m,d);
+					todayDate = todayDateText.toISOString().substr(0,10);
+					//test script - alert(todayDate+" - - "+data.date1);					
+
+					//Automatic set status 1
+					if(data.date1!=="" && data.date2!=="")
+					{
+						if(data.date1 >= data.date2)
+						{	
+						data.status1 = "Completed";						
+						}
+						else
+						{
+						data.status1 = "Overdue";	
+						}	
+					}	
+					else if((data.date1!=="" && data.date2=="" && todayDate > data.date1) || (data.date1 =="" && data.date2=="" && todayDate > data.dateDue))
+					{
+						data.status1 = "Overdue";
+					}		
+					else 
+					{
+						data.status1 = "In progress";
+					}						
+					
+					//Automatic set status 2
+					if(data.date3!=="" && data.date4!=="")
+					{
+						if(data.date3 >= data.date4)
+						{	
+						data.status2 = "Completed";						
+						}
+						else
+						{
+						data.status2 = "Overdue";	
+						}	
+					}
+					else if((data.date3!=="" && data.date4=="" && todayDate > data.date3) || (data.date3 =="" && data.date4=="" && todayDate > data.dateDue))
+					{
+						data.status2 = "Overdue";
+					}					
+					else
+					{
+						data.status2 = "In progress";
+					}						
+					
+					//Automatic set status 3
+					if(data.date5!=="" && data.date6!=="")
+					{
+						if(data.date5 >= data.date6)
+						{	
+						data.status3 = "Completed";						
+						}
+						else
+						{
+						data.status3 = "Overdue";	
+						}	
+					}
+					else if((data.date5!=="" && data.date6=="" && todayDate > data.date5) || (data.date5 =="" && data.date6=="" && todayDate > data.dateDue))
+					{
+						data.status3 = "Overdue";
+					}					
+					else
+					{
+						data.status3 = "In progress";
+					}	
+					
+					//Automatic set status 4
+					if(data.date7!=="" && data.date8!=="")
+					{
+						if(data.date7 >= data.date8)
+						{	
+						data.status4 = "Completed";						
+						}
+						else
+						{
+						data.status4 = "Overdue";	
+						}	
+					}
+					else if((data.date7!=="" && data.date8=="" && todayDate > data.date7) || (data.date7 =="" && data.date8=="" && todayDate > data.dateDue))
+					{
+						data.status4 = "Overdue";
+					}					
+					else
+					{
+						data.status4 = "In progress";
+					}					
+					
+					//Automatic set status 5
+					if(data.date9!=="" && data.date10!=="")
+					{
+						if(data.date9 >= data.date10)
+						{	
+						data.status5 = "Completed";						
+						}
+						else
+						{
+						data.status5 = "Overdue";	
+						}	
+					}
+					else if((data.date9!=="" && data.date10=="" && todayDate > data.date9) || (data.date9 =="" && data.date10=="" && todayDate > data.dateDue))
+					{
+						data.status5 = "Overdue";
+					}					
+					else
+					{
+						data.status5 = "In progress";
+					}						
+					
+					
+					//Automatic set status 6
+					if(data.date11!=="" && data.date12!=="")
+					{
+						if(data.date11 >= data.date12)
+						{	
+						data.status6 = "Completed";						
+						}
+						else
+						{
+						data.status6 = "Overdue";	
+						}	
+					}
+					else if((data.date11!=="" && data.date12=="" && todayDate > data.date11) || (data.date11 =="" && data.date12=="" && todayDate > data.dateDue))
+					{
+						data.status6 = "Overdue";
+					}					
+					else
+					{
+						data.status6 = "In progress";
+					}						
+					
+					
+					//Automatic set status 7
+					if(data.date13!=="" && data.date14!=="")
+					{
+						if(data.date13 >= data.date14)
+						{	
+						data.status7 = "Completed";						
+						}
+						else
+						{
+						data.status7 = "Overdue";	
+						}	
+					}
+					else if((data.date13!=="" && data.date14=="" && todayDate > data.date13) || (data.date13 =="" && data.date14=="" && todayDate > data.dateDue))
+					{
+						data.status7 = "Overdue";
+					}					
+					else
+					{
+						data.status7 = "In progress";
+					}						
+					
+					//Automatic set status 8
+					if(data.date15!=="" && data.date16!=="")
+					{
+						if(data.date15 >= data.date16)
+						{	
+						data.status8 = "Completed";						
+						}
+						else
+						{
+						data.status8 = "Overdue";	
+						}	
+					}
+					else if((data.date15!=="" && data.date16=="" && todayDate > data.date15) || (data.date15 =="" && data.date16=="" && todayDate > data.dateDue))
+					{
+						data.status8 = "Overdue";
+					}					
+					else
+					{
+						data.status8 = "In progress";
+					}
+					
+					//Automatic set status 9
+					if(data.date17!=="" && data.date18!=="")
+					{
+						if(data.date17 >= data.date18)
+						{	
+						data.status9 = "Completed";						
+						}
+						else
+						{
+						data.status9 = "Overdue";	
+						}	
+					}
+					else if((data.date17!=="" && data.date18=="" && todayDate > data.date17) || (data.date17 =="" && data.date18=="" && todayDate > data.dateDue))
+					{
+						data.status9 = "Overdue";
+					}					
+					else
+					{
+						data.status9 = "In progress";
+					}					
+					
+					
+					//Automatic set status 10
+					if(data.date19!=="" && data.date20!=="")
+					{
+						if(data.date19 >= data.date20)
+						{	
+						data.status10 = "Completed";						
+						}
+						else
+						{
+						data.status10 = "Overdue";	
+						}	
+					}
+					else if((data.date19!=="" && data.date20=="" && todayDate > data.date19) || (data.date19 =="" && data.date20=="" && todayDate > data.dateDue))
+					{
+						data.status10 = "Overdue";
+					}					
+					else
+					{
+						data.status10 = "In progress";
+					}
+					
+
+					//Automatic set status 11
+					if(data.date21!=="" && data.date22!=="")
+					{
+						if(data.date21 >= data.date22)
+						{	
+						data.status11 = "Completed";						
+						}
+						else
+						{
+						data.status11 = "Overdue";	
+						}	
+					}
+					else if((data.date21!=="" && data.date22=="" && todayDate > data.date21) || (data.date21 =="" && data.date22=="" && todayDate > data.dateDue))
+					{
+						data.status11 = "Overdue";
+					}					
+					else
+					{
+						data.status11 = "In progress";
+					}
+					
+					//Automatic set status 12
+					if(data.date23!=="" && data.date24!=="")
+					{
+						if(data.date23 >= data.date24)
+						{	
+						data.status12 = "Completed";						
+						}
+						else
+						{
+						data.status12 = "Overdue";	
+						}	
+					}
+					else if((data.date23!=="" && data.date24=="" && todayDate > data.date23) || (data.date23 =="" && data.date24=="" && todayDate > data.dateDue))
+					{
+						data.status12 = "Overdue";
+					}					
+					else
+					{
+						data.status12 = "In progress";
+					}					
+
+
+					//Automatic set status 13
+					if(data.date25!=="" && data.date26!=="")
+					{
+						if(data.date25 >= data.date26)
+						{	
+						data.status13 = "Completed";						
+						}
+						else
+						{
+						data.status13 = "Overdue";	
+						}	
+					}
+					else if((data.date25!=="" && data.date26=="" && todayDate > data.date25) || (data.date25 =="" && data.date26=="" && todayDate > data.dateDue))
+					{
+						data.status13 = "Overdue";
+					}					
+					else
+					{
+						data.status13 = "In progress";
+					}	
+
+					//Automatic set status 14
+					if(data.date27!=="" && data.date28!=="")
+					{
+						if(data.date27 >= data.date28)
+						{	
+						data.status14 = "Completed";						
+						}
+						else
+						{
+						data.status14 = "Overdue";	
+						}	
+					}
+					else if((data.date27!=="" && data.date28=="" && todayDate > data.date27) || (data.date27 =="" && data.date28=="" && todayDate > data.dateDue))
+					{
+						data.status14 = "Overdue";
+					}					
+					else
+					{
+						data.status14 = "In progress";
+					}	
+					
+					//Automatic set status 15
+					if(data.date29!=="" && data.date30!=="")
+					{
+						if(data.date29 >= data.date30)
+						{	
+						data.status15 = "Completed";						
+						}
+						else
+						{
+						data.status15 = "Overdue";	
+						}	
+					}
+					else if((data.date29!=="" && data.date30=="" && todayDate > data.date29) || (data.date29 =="" && data.date30=="" && todayDate > data.dateDue))
+					{
+						data.status15 = "Overdue";
+					}					
+					else
+					{
+						data.status15 = "In progress";
+					}						
+
+					//Automatic set status 16
+					if(data.date31!=="" && data.date32!=="")
+					{
+						if(data.date31 >= data.date32)
+						{	
+						data.status16 = "Completed";						
+						}
+						else
+						{
+						data.status16 = "Overdue";	
+						}	
+					}
+					else if((data.date31!=="" && data.date32=="" && todayDate > data.date31) || (data.date31 =="" && data.date32=="" && todayDate > data.dateDue))
+					{
+						data.status16 = "Overdue";
+					}					
+					else
+					{
+						data.status16 = "In progress";
+					}
+
+					//Automatic set status 17
+					if(data.date33!=="" && data.date34!=="")
+					{
+						if(data.date33 >= data.date34)
+						{	
+						data.status17 = "Completed";						
+						}
+						else
+						{
+						data.status17 = "Overdue";	
+						}	
+					}
+					else if((data.date33!=="" && data.date34=="" && todayDate > data.date33) || (data.date33 =="" && data.date34=="" && todayDate > data.dateDue))
+					{
+						data.status17 = "Overdue";
+					}					
+					else
+					{
+						data.status17 = "In progress";
+					}
+
+					//Automatic set status 18
+					if(data.date35!=="" && data.date36!=="")
+					{
+						if(data.date35 >= data.date36)
+						{	
+						data.status18 = "Completed";						
+						}
+						else
+						{
+						data.status18 = "Overdue";	
+						}	
+					}
+					else if((data.date35!=="" && data.date36=="" && todayDate > data.date35) || (data.date35 =="" && data.date36=="" && todayDate > data.dateDue))
+					{
+						data.status18 = "Overdue";
+					}					
+					else
+					{
+						data.status18 = "In progress";
+					}					
+					
+					//Automatic set status 19
+					if(data.date37!=="" && data.date38!=="")
+					{
+						if(data.date37 >= data.date38)
+						{	
+						data.status19 = "Completed";						
+						}
+						else
+						{
+						data.status19 = "Overdue";	
+						}	
+					}
+					else if((data.date37!=="" && data.date38=="" && todayDate > data.date37) || (data.date37 =="" && data.date38=="" && todayDate > data.dateDue))
+					{
+						data.status19 = "Overdue";
+					}					
+					else
+					{
+						data.status19 = "In progress";
+					}					
+
+					//Automatic set status 20
+					if(data.date39!=="" && data.date40!=="")
+					{
+						if(data.date39 >= data.date40)
+						{	
+						data.status20 = "Completed";						
+						}
+						else
+						{
+						data.status20 = "Overdue";	
+						}	
+					}
+					else if((data.date39!=="" && data.date40=="" && todayDate > data.date39) || (data.date39 =="" && data.date40=="" && todayDate > data.dateDue))
+					{
+						data.status20 = "Overdue";
+					}					
+					else
+					{
+						data.status20 = "In progress";
+					}
+
+					//Automatic set status 21
+					if(data.date41!=="" && data.date42!=="")
+					{
+						if(data.date41 >= data.date42)
+						{	
+						data.status21 = "Completed";						
+						}
+						else
+						{
+						data.status21 = "Overdue";	
+						}	
+					}
+					else if((data.date41!=="" && data.date42=="" && todayDate > data.date41) || (data.date41 =="" && data.date42=="" && todayDate > data.dateDue))
+					{
+						data.status21 = "Overdue";
+					}					
+					else
+					{
+						data.status21 = "In progress";
+					}					
+					
+					//Automatic set status 22
+					if(data.date43!=="" && data.date44!=="")
+					{
+						if(data.date43 >= data.date44)
+						{	
+						data.status22 = "Completed";						
+						}
+						else
+						{
+						data.status22 = "Overdue";	
+						}	
+					}
+					else if((data.date43!=="" && data.date44=="" && todayDate > data.date43) || (data.date43 =="" && data.date44=="" && todayDate > data.dateDue))
+					{
+						data.status22 = "Overdue";
+					}					
+					else
+					{
+						data.status22 = "In progress";
+					}					
+					
+					//Automatic set status 23
+					if(data.date45!=="" && data.date46!=="")
+					{
+						if(data.date45 >= data.date46)
+						{	
+						data.status23 = "Completed";						
+						}
+						else
+						{
+						data.status23 = "Overdue";	
+						}	
+					}
+					else if((data.date45!=="" && data.date46=="" && todayDate > data.date45) || (data.date45 =="" && data.date46=="" && todayDate > data.dateDue))
+					{
+						data.status23 = "Overdue";
+					}					
+					else
+					{
+						data.status23 = "In progress";
+					}					
+					
+					//Automatic set status 24
+					if(data.date47!=="" && data.date48!=="")
+					{
+						if(data.date47 >= data.date48)
+						{	
+						data.status24 = "Completed";						
+						}
+						else
+						{
+						data.status24 = "Overdue";	
+						}	
+					}
+					else if((data.date47!=="" && data.date48=="" && todayDate > data.date47) || (data.date47 =="" && data.date48=="" && todayDate > data.dateDue))
+					{
+						data.status24 = "Overdue";
+					}					
+					else
+					{
+						data.status24 = "In progress";
+					}
+					
+					data.status0 = data.status24;
+
+					
+					/* Previous script of reading data from input field 					
 
 					data.status1 = document.getElementById("status1").checked;
 					data.status2 = document.getElementById("status2").checked;
@@ -170,7 +694,7 @@
 					data.status22 = document.getElementById("status22").checked;
 					data.status23 = document.getElementById("status23").checked;
 					data.status24 = document.getElementById("status24").checked;
-
+					*/
 
 
 					

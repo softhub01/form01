@@ -10,7 +10,7 @@
 	  Parse.initialize("6SDrpp6FgvPQpKQCmj4CQ719sxVyW2leWtGuVDh9", "IY1N0Bo0OxufSKFxtdt7XOrTTdhq2T1z1NSc0utz");
 	  
 	  //Create new parse object for where you want to save the data in the form
-	  var Form01 = Parse.Object.extend("Form01");
+	  var Blog = Parse.Object.extend("Blog");
   
 	  // Check who is currently login
 	  function checkLogin() {
@@ -80,7 +80,7 @@
 	  
 	  // Create function for getting object from Parse
 	  function getTasks() {
-		var query = new Parse.Query(Form01);
+		var query = new Parse.Query(Blog);
 		
 		query.equalTo("user", Parse.User.current());
 		
@@ -95,10 +95,9 @@
 				for (var i in results) {
 					var formtype = results[i].get("formtype");
 					var fileNo = results[i].get("fileNo");
-					var updatedAt = results[i].updatedAt;
-					//var updatedAt = results[i].updatedAt.toISOString().substr(0,39);
-					var dateDue = results[i].get("dateDue")
-					var status0 = results[i].get("status0");
+					var date1 = results[i].get("date1");
+					var date2 = results[i].get("date2");
+					//var status1 = results[i].get("status1");
 
 					var user = results[i].get("user");
 					var username = user.get("username");
@@ -108,11 +107,10 @@
 					//Print results below the page
 					output += "<li>";
 					//output += "<input type="hidden" id="formtype" value=""+formtype+"">";
-					output += "<h3>File No:<a href='"+id+"'>"+fileNo+"</a></h3>";
-					output += "<p> Date of Deadline: "+dateDue+"</p>";
-					output += "<p> Overall Project Status: "+status0+"</p>";
-					output += "<p> Last Updated: "+updatedAt+"</p>";
-					output += "<p> Created by: "+username+"</p>";
+					output += "<h3><a href='"+id+"'>"+fileNo+"</a></h3>";
+					output += "<p> Date of Deadline: "+date1+"</p>";
+					output += "<p> Date of Completion: "+date2+"</p>";
+					output += "<p>created by: "+username+"</p>";
 					output += "</li>";
 				}	
 				$("#list-tasks").html(output);	
@@ -137,13 +135,13 @@
 		
 	  	var id = $(this).attr("href");
 		
-		var query = new Parse.Query(Form01);
+		var query = new Parse.Query(Blog);
 		query.equalTo("objectId", id);
 		query.find({
 			success: function(result){
 
 				var formtype =result[0].get("formtype");		
-				var url = "link"+formtype+"update.html?task="+encodeURIComponent(id);
+				var url = "testupdate.html?task="+encodeURIComponent(id);
 				alert(url);
 				window.location.href = url;
 

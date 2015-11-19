@@ -72,6 +72,7 @@
 				
 			
 					data.fileNo = $("#fileNo").val();
+					data.dateDue = $("#dateDue").val();
 					
 					// Section 1
 					data.pname = $("#pname").val();
@@ -88,8 +89,6 @@
 					data.vbtel = $("#vbtel").val();
 					data.dname = $("#dname").val();
 					data.dtel = $("#dtel").val();
-					//data.date3 = $("#date3").val(); for future use
-					//data.date4 = $("#date4").val(); for future use					
 					
 					//Section2 and onwards
 					data.date1 = $("#date1").val();
@@ -119,11 +118,299 @@
 					data.date23 = $("#date25").val();
 					data.date24 = $("#date26").val();
 					
-					
-					
-					
+				
 					data.user = Parse.User.current();
+					
+					//Get today's date in string
+					var todayDate = new Date();
+					var m = todayDate.getMonth();
+					var d = todayDate.getDate()+1;
+					var y = todayDate.getFullYear();					
 
+					var todayDateText = new Date(y,m,d);
+					todayDate = todayDateText.toISOString().substr(0,10);
+
+					//Automatic set status 1
+					if(data.date1!=="" && data.date2!=="")
+					{
+						if(data.date1 >= data.date2)
+						{	
+						data.status1 = "Completed";						
+						}
+						else
+						{
+						data.status1 = "Overdue";	
+						}	
+					}	
+					else if((data.date1!=="" && data.date2=="" && todayDate > data.date1) || (data.date1 =="" && data.date2=="" && todayDate > data.dateDue))
+					{
+						data.status1 = "Overdue";
+					}		
+					else 
+					{
+						data.status1 = "In progress";
+					}						
+					
+					//Automatic set status 2
+					if(data.date3!=="" && data.date4!=="")
+					{
+						if(data.date3 >= data.date4)
+						{	
+						data.status2 = "Completed";						
+						}
+						else
+						{
+						data.status2 = "Overdue";	
+						}	
+					}
+					else if((data.date3!=="" && data.date4=="" && todayDate > data.date3) || (data.date3 =="" && data.date4=="" && todayDate > data.dateDue))
+					{
+						data.status2 = "Overdue";
+					}					
+					else
+					{
+						data.status2 = "In progress";
+					}						
+					
+					//Automatic set status 3
+					if(data.date5!=="" && data.date6!=="")
+					{
+						if(data.date5 >= data.date6)
+						{	
+						data.status3 = "Completed";						
+						}
+						else
+						{
+						data.status3 = "Overdue";	
+						}	
+					}
+					else if((data.date5!=="" && data.date6=="" && todayDate > data.date5) || (data.date5 =="" && data.date6=="" && todayDate > data.dateDue))
+					{
+						data.status3 = "Overdue";
+					}					
+					else
+					{
+						data.status3 = "In progress";
+					}	
+					
+					//Automatic set status 4
+					if(data.date7!=="" && data.date8!=="")
+					{
+						if(data.date7 >= data.date8)
+						{	
+						data.status4 = "Completed";						
+						}
+						else
+						{
+						data.status4 = "Overdue";	
+						}	
+					}
+					else if((data.date7!=="" && data.date8=="" && todayDate > data.date7) || (data.date7 =="" && data.date8=="" && todayDate > data.dateDue))
+					{
+						data.status4 = "Overdue";
+					}					
+					else
+					{
+						data.status4 = "In progress";
+					}					
+					
+					//Automatic set status 5
+					if(data.date9!=="" && data.date10!=="")
+					{
+						if(data.date9 >= data.date10)
+						{	
+						data.status5 = "Completed";						
+						}
+						else
+						{
+						data.status5 = "Overdue";	
+						}	
+					}
+					else if((data.date9!=="" && data.date10=="" && todayDate > data.date9) || (data.date9 =="" && data.date10=="" && todayDate > data.dateDue))
+					{
+						data.status5 = "Overdue";
+					}					
+					else
+					{
+						data.status5 = "In progress";
+					}						
+					
+					
+					//Automatic set status 6
+					if(data.date11!=="" && data.date12!=="")
+					{
+						if(data.date11 >= data.date12)
+						{	
+						data.status6 = "Completed";						
+						}
+						else
+						{
+						data.status6 = "Overdue";	
+						}	
+					}
+					else if((data.date11!=="" && data.date12=="" && todayDate > data.date11) || (data.date11 =="" && data.date12=="" && todayDate > data.dateDue))
+					{
+						data.status6 = "Overdue";
+					}					
+					else
+					{
+						data.status6 = "In progress";
+					}						
+					
+					
+					//Automatic set status 7
+					if(data.date13!=="" && data.date14!=="")
+					{
+						if(data.date13 >= data.date14)
+						{	
+						data.status7 = "Completed";						
+						}
+						else
+						{
+						data.status7 = "Overdue";	
+						}	
+					}
+					else if((data.date13!=="" && data.date14=="" && todayDate > data.date13) || (data.date13 =="" && data.date14=="" && todayDate > data.dateDue))
+					{
+						data.status7 = "Overdue";
+					}					
+					else
+					{
+						data.status7 = "In progress";
+					}						
+					
+					//Automatic set status 8
+					if(data.date15!=="" && data.date16!=="")
+					{
+						if(data.date15 >= data.date16)
+						{	
+						data.status8 = "Completed";						
+						}
+						else
+						{
+						data.status8 = "Overdue";	
+						}	
+					}
+					else if((data.date15!=="" && data.date16=="" && todayDate > data.date15) || (data.date15 =="" && data.date16=="" && todayDate > data.dateDue))
+					{
+						data.status8 = "Overdue";
+					}					
+					else
+					{
+						data.status8 = "In progress";
+					}
+					
+					//Automatic set status 9
+					if(data.date17!=="" && data.date18!=="")
+					{
+						if(data.date17 >= data.date18)
+						{	
+						data.status9 = "Completed";						
+						}
+						else
+						{
+						data.status9 = "Overdue";	
+						}	
+					}
+					else if((data.date17!=="" && data.date18=="" && todayDate > data.date17) || (data.date17 =="" && data.date18=="" && todayDate > data.dateDue))
+					{
+						data.status9 = "Overdue";
+					}					
+					else
+					{
+						data.status9 = "In progress";
+					}					
+					
+					
+					//Automatic set status 10
+					if(data.date19!=="" && data.date20!=="")
+					{
+						if(data.date19 >= data.date20)
+						{	
+						data.status10 = "Completed";						
+						}
+						else
+						{
+						data.status10 = "Overdue";	
+						}	
+					}
+					else if((data.date19!=="" && data.date20=="" && todayDate > data.date19) || (data.date19 =="" && data.date20=="" && todayDate > data.dateDue))
+					{
+						data.status10 = "Overdue";
+					}					
+					else
+					{
+						data.status10 = "In progress";
+					}
+					
+
+					//Automatic set status 11
+					if(data.date21!=="" && data.date22!=="")
+					{
+						if(data.date21 >= data.date22)
+						{	
+						data.status11 = "Completed";						
+						}
+						else
+						{
+						data.status11 = "Overdue";	
+						}	
+					}
+					else if((data.date21!=="" && data.date22=="" && todayDate > data.date21) || (data.date21 =="" && data.date22=="" && todayDate > data.dateDue))
+					{
+						data.status11 = "Overdue";
+					}					
+					else
+					{
+						data.status11 = "In progress";
+					}
+					
+					//Automatic set status 12
+					if(data.date23!=="" && data.date24!=="")
+					{
+						if(data.date23 >= data.date24)
+						{	
+						data.status12 = "Completed";						
+						}
+						else
+						{
+						data.status12 = "Overdue";	
+						}	
+					}
+					else if((data.date23!=="" && data.date24=="" && todayDate > data.date23) || (data.date23 =="" && data.date24=="" && todayDate > data.dateDue))
+					{
+						data.status12 = "Overdue";
+					}					
+					else
+					{
+						data.status12 = "In progress";
+					}					
+
+
+					//Automatic set status 13
+					if(data.date25!=="" && data.date26!=="")
+					{
+						if(data.date25 >= data.date26)
+						{	
+						data.status13 = "Completed";						
+						}
+						else
+						{
+						data.status13 = "Overdue";	
+						}	
+					}
+					else if((data.date25!=="" && data.date26=="" && todayDate > data.date25) || (data.date25 =="" && data.date26=="" && todayDate > data.dateDue))
+					{
+						data.status13 = "Overdue";
+					}					
+					else
+					{
+						data.status13 = "In progress";
+					}						
+					
+					data.status0 = data.status13;
+					
+					/* Previous script of reading data from input field 
 					data.status1 = document.getElementById("status1").checked;
 					data.status2 = document.getElementById("status2").checked;
 					data.status3 = document.getElementById("status3").checked;
@@ -137,7 +424,7 @@
 					data.status11 = document.getElementById("status11").checked;
 					data.status12 = document.getElementById("status12").checked;
 					data.status13 = document.getElementById("status13").checked;
-
+					*/
 
 
 					

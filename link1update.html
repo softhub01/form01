@@ -41,7 +41,7 @@
           <a class="blog-nav-item active" href="#">Update</a>
           <!--<a class="blog-nav-item" href="#">Forgot ID/Password</a>-->
           <!--Example to back page while on-click action is executed-->
-		  <a class="blog-nav-item" href="#" onclick="location.href = document.referrer; return false;">Back to task list</a>
+		  <a class="blog-nav-item" href="#" onclick="location.href = document.referrer; return ;">Back to task list</a>
         </nav>
       </div>
     </div>
@@ -65,7 +65,21 @@
 				
 				<div>
                     <p><input type="text" name="fileNo" id="fileNo" value="" readonly></p> 
+				</div>
 				</br>
+				
+				<div>
+					<!-- This will only display in update mode 
+					<Label>No. of Day(s) left:</label>					
+					<p><input type="text" name="dayLeft" id="dayLeft" value="" readonly="yes"> Day(s) </p>	
+					-->
+					<p><Label>Project Due Date:</label>
+					<input type="date" name="dateDue" id="dateDue" value=""></p>
+						
+					<Label>Overall Project Status:</label>
+				    <input type="text" name="status0" id="status0" value="" readonly>
+				</div>				
+				
 				
 <div class="container">
   <h2>Acting for Banker</h2>
@@ -162,70 +176,70 @@
 				<td>2. Received Letter of Offer & Letter of Instruction from Owner of property</td>
 				<td><input type="date" name="date1" class="form-control" id="date1" placeholder="date of deadline"></td>
 				<td><input type="date" name="date2" class="form-control"id="date2" placeholder="date of completion"></td>
-				<td><input type="checkbox" name="status1" id="status1" value="false"></td>
+				<td><input type="text" name="status1" id="status1" value="" readonly></td>
 				</tr>
  
 				<tr>
 				<td>2A. Request a copy of SPA from SPA Solicitor Status:</td>
 				<td><input type="date" class="form-control" id="date3" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date4" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status2" value="false"></td>
+				<td><input type="text" id="status2" value="" readonly></td>
 				</tr>
 
  				<tr>
 				<td>2B. Conduct Land Search Status:</td>
 				<td><input type="date" class="form-control" id="date5" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date6" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status3" value="false"></td>
+				<td><input type="text" id="status3" value="" readonly></td>
 				</tr>
  
  				<tr>
 				<td>2C. Prepare loan documents:-</td>
 				<td><input type="date" class="form-control" id="date7" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date8" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status4" value="false"></td>
+				<td><input type="text" id="status4" value="" readonly></td>
 				</tr>
  
  				<tr>
 				<td>      (i) Acknowledgement letter</td>
 				<td><input type="date" class="form-control" id="date9" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date10" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status5" value="false"></td>
+				<td><input type="text" id="status5" value="" readonly></td>
 				</tr>
  
  				<tr>
 				<td>      (ii) Statutory declaration for owner occupied</td>
 				<td><input type="date" class="form-control" id="date11" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date12" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status6" value="false"></td>
+				<td><input type="text" id="status6" value="" readonly></td>
 				</tr>
  
  				<tr>
 				<td>      (iii) Form 16A</td>
 				<td><input type="date" class="form-control" id="date13" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date14" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status7" value="false"></td>
+				<td><input type="text" id="status7" value="" readonly></td>
 				</tr>
  
  				<tr>
 				<td>      (iv) Charge Annexure</td>
 				<td><input type="date" class="form-control" id="date15" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date16" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status8" value="false"></td>
+				<td><input type="text" id="status8" value="" readonly></td>
 				</tr>
  
   				<tr>
 				<td>      (v) Facility Agreement (FA)</td>
 				<td><input type="date" class="form-control" id="date17" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date18" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status9" value="false"></td>
+				<td><input type="text" id="status9" value="" readonly></td>
 				</tr>
  
   				<tr>
 				<td>      (vi) Others</td>
 				<td><input type="date" class="form-control" id="date19" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date20" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status10" value="false"></td>
+				<td><input type="text" id="status10" value="" readonly></td>
 				</tr>
 	
 				</tbody>
@@ -261,42 +275,42 @@
 				<td>2D. Letter of Confirmation & undertaking Status from Vendor's/Purchaser's Solicitors:</td>
 				<td><input type="date" class="form-control" id="date21" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date22" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status11" value="false"></td>
+				<td><input type="text" id="status11" value="" readonly></td>
 				</tr>
  
   				<tr>
 				<td>      (i) Requested (usually 1 day)</td>
 				<td><input type="date" class="form-control" id="date23" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date24" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status12" value="false"></td>
+				<td><input type="text" id="status12" value="" readonly></td>
 				</tr>
 
    				<tr>
 				<td>      (ii) Received (max. 14days allowed)</td>
 				<td><input type="date" class="form-control" id="date25" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date26" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status13" value="false"></td>
+				<td><input type="text" id="status13" value="" readonly></td>
 				</tr>
  
   				<tr>
 				<td>2E. Request Letter of undertaking from Vendor's/Purchaser's Solicitors:</td>
 				<td><input type="date" class="form-control" id="date27" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date28" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status14" value="false"></td>
+				<td><input type="text" id="status14" value="" readonly></td>
 				</tr>
 		
   				<tr>
 				<td>2F. Arrange appointment for Purchaser / Borrower's execution</td>
 				<td><input type="date" class="form-control" id="date29" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date30" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status15" value="false"></td>
+				<td><input type="text" id="status15" value="" readonly></td>
 				</tr>
  
   				<tr>
 				<td>2G. Obtain copy of Purchaser's IC with CTC</td>
 				<td><input type="date" class="form-control" id="date31" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date32" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status16" value="false"></td>
+				<td><input type="text" id="status16" value="" readonly></td>
 				</tr>
 
   				<tr>
@@ -310,28 +324,28 @@
 				<td>      (i) Company's Form24</td>
 				<td><input type="date" class="form-control" id="date33" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date34" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status17" value="false"></td>
+				<td><input type="text" id="status17" value="" readonly></td>
 				</tr>
  
   				<tr>
 				<td>      (ii) Company's Form44</td>
 				<td><input type="date" class="form-control" id="date35" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date36" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status18" value="false"></td>
+				<td><input type="text" id="status18" value="" readonly></td>
 				</tr>
 
   				<tr>
 				<td>      (iii) Company's MAA</td>
 				<td><input type="date" class="form-control" id="date37" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date38" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status19" value="false"></td>
+				<td><input type="text" id="status19" value="" readonly></td>
 				</tr>
  
   				<tr>
 				<td>      (iv) Shareholders/Members/Directors resolution to finance property</td>
 				<td><input type="date" class="form-control" id="date39" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date40" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status20" value="false"></td>
+				<td><input type="text" id="status20" value="" readonly></td>
 				</tr>
 			
 				</tbody>
@@ -362,14 +376,14 @@
 				<td>2H. Forward loan documents</td>
 				<td><input type="date" class="form-control" id="date41" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date42" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status21" value="false"></td>
+				<td><input type="text" id="status21" value="" readonly></td>
 				</tr>
  
   				<tr>
 				<td>2I. Request Letter of undertaking from bank addressed to Vendor</td>
 				<td><input type="date" class="form-control" id="date43" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date44" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status22" value="false"></td>
+				<td><input type="text" id="status22" value="" readonly></td>
 				</tr>
 			
 				</tbody>
@@ -401,7 +415,7 @@
 				<td>2J. Received Document executed accepted by bank & letter of undertaking from bank</td>
 				<td><input type="date" class="form-control" id="date45" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date46" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status23" value="false"></td>
+				<td><input type="text" id="status23" value="" readonly></td>
 				</tr>
 
   				<tr>
@@ -415,35 +429,35 @@
 				<td>- Obtain Original Title</td>
 				<td><input type="date" class="form-control" id="date47" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date48" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status24" value="false"></td>
+				<td><input type="text" id="status24" value="" readonly></td>
 				</tr>
 			
 				<tr>
 				<td>- Obtain Original MOT</td>
 				<td><input type="date" class="form-control" id="date49" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date50" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status25" value="false"></td>
+				<td><input type="text" id="status25" value="" readonly></td>
 				</tr>
 			
 				<tr>
 				<td>- Obtain Quit rent & assessment</td>
 				<td><input type="date" class="form-control" id="date51" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date52" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status26" value="false"></td>
+				<td><input type="text" id="status26" value="" readonly></td>
 				</tr>
 			
 				<tr>
 				<td>- Vendor's and Purchaser's IC</td>
 				<td><input type="date" class="form-control" id="date53" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date54" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status27" value="false"></td>
+				<td><input type="text" id="status27" value="" readonly></td>
 				</tr>
 			
 				<tr>
 				<td>- Vendor's Letter of undertaking to refund</td>
 				<td><input type="date" class="form-control" id="date55" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date56" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status28" value="false"></td>
+				<td><input type="text" id="status28" value="" readonly></td>
 				</tr>
 			
 				</tbody>
@@ -475,7 +489,7 @@
 				<td>2L. Produce all relevant documents to stamp duty office</td>
 				<td><input type="date" class="form-control" id="date57" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date58" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status29" value="false"></td>
+				<td><input type="text" id="status29" value="" readonly></td>
 				</tr>
 
   				<tr>
@@ -521,47 +535,47 @@
 				<td>2M. Presentation in Land Office</td>
 				<td><input type="date" class="form-control" id="date59" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date60" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status30" value="false"></td>
+				<td><input type="text" id="status30" value="" readonly></td>
 				</tr>
 
   				<tr>
 				<td>2N. Advise to  bank to release full loan sum (lump sum)</td>
 				<td><input type="date" class="form-control" id="date61" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date62" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status31" value="false"></td>
+				<td><input type="text" id="status31" value="" readonly></td>
 				</tr>	
 		
   				<tr>
 				<td>2O. Forward  loan sum to Vendor's OR Purchaser's Solicitors</td>
 				<td><input type="date" class="form-control" id="date63" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date64" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status32" value="false"></td>
+				<td><input type="text" id="status32" value="" readonly></td>
 				</tr>		
 
 				<td>2P. Collection of Original Title from Land Office</td>
 				<td><input type="date" class="form-control" id="date65" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date66" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status33" value="false"></td>
+				<td><input type="text" id="status33" value="" readonly></td>
 				</tr>	
 		
   				<tr>
 				<td>2Q. Forward loan document to Borrower</td>
 				<td><input type="date" class="form-control" id="date67" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date68" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status34" value="false"></td>
+				<td><input type="text" id="status34" value="" readonly></td>
 				</tr>
 
 				<td>2R. Forward Original Title and Stamped Duplicated Charge to the Bank, </td>
 				<td><input type="date" class="form-control" id="date69" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date70" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status35" value="false"></td>
+				<td><input type="text" id="status35" value="" readonly></td>
 				</tr>	
 		
   				<tr>
 				<td>- CC a copy to the Purchaser/Borrower</td>
 				<td><input type="date" class="form-control" id="date71" placeholder="date of deadline"></td>
 				<td><input type="date" class="form-control"id="date72" placeholder="date of completion"></td>
-				<td><input type="checkbox" id="status36" value="false"></td>
+				<td><input type="text" id="status36" value="" readonly></td>
 				</tr>
 				
 				</tbody>
