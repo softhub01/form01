@@ -9,25 +9,26 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/blog.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker3.css" rel="stylesheet">
 
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <!-- Parse.js -->
     <script type="text/javascript" src="https://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
 	
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <!--script src="js/bootstrap.min.js"></script-->
-    <!--script src="js/script2c.js"></script-->
-
-    <!--script src="jQueryAssets/jquery-1.8.3.min.js" type="text/javascript"></script>
-    <script src="jquery-mobile/jquery.mobile-1.3.0.min.js" type="text/javascript"></script-->
-    <script src="jQueryAssets/jquery-ui-1.9.2.datepicker.custom.min.js" type="text/javascript"></script>
-    <!--script src="jquery-ui-1.8.16.custom/js/jquery-ui-1.8.16.custom.min.js"></script-->
-    <script src="jQueryAssets/jquery-ui-1.9.2.js" type="text/javascript"></script>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="js/script2.js"></script>
+	<script src="js/mydate-validator4update.js"></script>
 	
-	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
 	
   </head>
  
@@ -36,10 +37,7 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <!--a class="blog-nav-item" href="index.html">Home</a-->
-          <!--a class="blog-nav-item" href="#">New Registration</a>-->
           <a class="blog-nav-item active" href="#">Update</a>
-          <!--<a class="blog-nav-item" href="#">Forgot ID/Password</a>-->
           <!--Example to back page while on-click action is executed-->
 		  <a class="blog-nav-item" href="#" onclick="location.href = document.referrer; return false;">Back to task list</a>
         </nav>
@@ -52,8 +50,8 @@
 			<div id="current-user"></div>			
 			</br>
 			<div>
-				<button id="logout">Log Out</button>
-			</div>	
+				<button class="btn btn-primary" id="logout">Log Out</button>
+			</div>		
 
 			<div data-role="header">
 				<h2>Update : Subsale - (Leasehold & Charge to bank)</h2><p>
@@ -64,7 +62,8 @@
 				<form id="task-form" >
 				
 				<div>
-                    <p><input type="text" name="fileNo" id="fileNo" value="" readonly></p> 
+					<label class="control-label"> File No:</label>
+					<input type="text" class="form-control" name="fileNo" id="fileNo" value="" readonly>
 				</div>
 				</br>
 				
@@ -73,11 +72,11 @@
 					<Label>No. of Day(s) left:</label>					
 					<p><input type="text" name="dayLeft" id="dayLeft" value="" readonly="yes"> Day(s) </p>	
 					-->
-					<p><Label>Project Due Date:</label>
-					<input type="date" name="dateDue" id="dateDue" value=""></p>
-						
+					<Label>Project Due Date:</label>
+					<input type="text" name="dateDue" id="dateDue"  class="form-control" data-format="yyyy-MM-dd" required disabled>					
+					
 					<Label>Overall Project Status:</label>
-				    <input type="text" name="status0" id="status0" value="" readonly>
+				    <input type="text" name="status0" id="status0"  class="form-control" value="" readonly>
 				</div>	
 				
 <div class="container">
@@ -90,7 +89,7 @@
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Section 1-4B</a>
         </h4>
       </div>
-      <div id="collapse1" class="panel-collapse collapse in">
+      <div id="collapse1" class="panel-collapse collapse">
         <div class="panel-body">
 
 			<Label>1A. Enter Purchaser Name:</label>
@@ -161,7 +160,7 @@
       </div>
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body">
-					<table width="auto" border="1">
+					<table width="auto" border="1" class="table table-striped table-hover ">
 				<tbody>
 				<tr>
 				<td width="380">Task</td>
@@ -173,86 +172,86 @@
     
 				<tr>
 				<td>2. Received Letter of Offer & Letter of Instruction from Bank</td>
-				<td><input type="date" name="date1" class="form-control" id="date1" placeholder="date of deadline"></td>
-				<td><input type="date" name="date2" class="form-control"id="date2" placeholder="date of completion"></td>
-				<td><input type="text" name="status1" id="status1" value="" readonly></td>
+				<td><input type="text" name="date1" class="form-control" id="date1" placeholder="date of deadline"></td>
+				<td><input type="text" name="date2" class="form-control" id="date2" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" name="status1" id="status1" value="" readonly></td>
 				</tr>
  
 				<tr>
 				<td>2A. Request a copy of SPA from SPA Solicitor Status:</td>
-				<td><input type="date" class="form-control" id="date3" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date4" placeholder="date of completion"></td>
-				<td><input type="text" id="status2" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date3" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date4" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status2" value="" readonly></td>
 				</tr>
 
  				<tr>
 				<td>2B. Conduct Land Search Status:</td>
-				<td><input type="date" class="form-control" id="date5" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date6" placeholder="date of completion"></td>
-				<td><input type="text" id="status3" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date5" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date6" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status3" value="" readonly></td>
 				</tr>
  
  				<tr>
 				<td>2C. Prepare loan documents:-</td>
-				<td><input type="date" class="form-control" id="date7" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date8" placeholder="date of completion"></td>
-				<td><input type="text" id="status4" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date7" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date8" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status4" value="" readonly></td>
 				</tr>
  
  				<tr>
 				<td>      (i) Acknowledgement letter</td>
-				<td><input type="date" class="form-control" id="date9" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date10" placeholder="date of completion"></td>
-				<td><input type="text" id="status5" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date9" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date10" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status5" value="" readonly></td>
 				</tr>
  
  				<tr>
 				<td>      (ii) Statutory declaration for owner occupied</td>
-				<td><input type="date" class="form-control" id="date11" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date12" placeholder="date of completion"></td>
-				<td><input type="text" id="status6" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date11" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date12" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status6" value="" readonly></td>
 				</tr>
  
  				<tr>
 				<td>      (iii) Form 16A</td>
-				<td><input type="date" class="form-control" id="date13" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date14" placeholder="date of completion"></td>
-				<td><input type="text" id="status7" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date13" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date14" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status7" value="" readonly></td>
 				</tr>
  
  				<tr>
 				<td>      (iv) Charge Annexure</td>
-				<td><input type="date" class="form-control" id="date15" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date16" placeholder="date of completion"></td>
-				<td><input type="text" id="status8" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date15" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date16" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status8" value="" readonly></td>
 				</tr>
  
   				<tr>
 				<td>      (v) Facility Agreement (FA)</td>
-				<td><input type="date" class="form-control" id="date17" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date18" placeholder="date of completion"></td>
-				<td><input type="text" id="status9" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date17" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date18" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status9" value="" readonly></td>
 				</tr>
 
   				<tr>
 				<td>      (vi) ***Charge to Bank - Bank caveat form</td>
-				<td><input type="date" class="form-control" id="date19" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date20" placeholder="date of completion"></td>
-				<td><input type="text" id="status10" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date19" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date20" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status10" value="" readonly></td>
 				</tr>
 				
   				<tr>
 				<td>      (vii) *LEASEHOLD - Consent to Charge</td>
-				<td><input type="date" class="form-control" id="date21" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date22" placeholder="date of completion"></td>
-				<td><input type="text" id="status11" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date21" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date22" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status11" value="" readonly></td>
 				</tr>
 
   				<tr>
 				<td>      (viii) Others</td>
-				<td><input type="date" class="form-control" id="date23" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date24" placeholder="date of completion"></td>
-				<td><input type="text" id="status12" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date23" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date24" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status12" value="" readonly></td>
 				</tr>
 	
 				</tbody>
@@ -274,7 +273,7 @@
       </div>
       <div id="collapse3" class="panel-collapse collapse">
         <div class="panel-body">
-					<table width="auto" border="1">
+					<table width="auto" border="1" class="table table-striped table-hover ">
 				<tbody>
 				<tr>
 				<td width="380">Task</td>
@@ -286,44 +285,44 @@
  
   				<tr>
 				<td>2D. Letter of Confirmation & undertaking Status from Vendor's/Purchaser's Solicitors:</td>
-				<td><input type="date" class="form-control" id="date25" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date26" placeholder="date of completion"></td>
-				<td><input type="text" id="status13" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date25" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date26" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status13" value="" readonly></td>
 				</tr>
  
   				<tr>
 				<td>      (i) Requested (usually 1 day)</td>
-				<td><input type="date" class="form-control" id="date27" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date28" placeholder="date of completion"></td>
-				<td><input type="text" id="status14" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date27" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date28" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status14" value="" readonly></td>
 				</tr>
 
    				<tr>
 				<td>      (ii) Received (max. 14days allowed)</td>
-				<td><input type="date" class="form-control" id="date29" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date30" placeholder="date of completion"></td>
-				<td><input type="text" id="status15" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date29" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date30" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status15" value="" readonly></td>
 				</tr>
  
   				<tr>
-				<td>2E. Request Letter of undertaking from Vendor's / Purchaser's Solicitors:</td>
-				<td><input type="date" class="form-control" id="date31" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date32" placeholder="date of completion"></td>
-				<td><input type="text" id="status16" value="" readonly></td>
+				<td>2E. Request Letter of undertaking from Vendor's/Purchaser's Solicitors:</td>
+				<td><input type="text" class="form-control" id="date31" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date32" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status16" value="" readonly></td>
 				</tr>
 		
   				<tr>
 				<td>2F. Arrange appointment for Purchaser / Borrower's execution</td>
-				<td><input type="date" class="form-control" id="date33" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date34" placeholder="date of completion"></td>
-				<td><input type="text" id="status17" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date33" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date34" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status17" value="" readonly></td>
 				</tr>
  
   				<tr>
-				<td>2G. Obtain copy of Purchaser's IC with CTC</td>
-				<td><input type="date" class="form-control" id="date35" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date36" placeholder="date of completion"></td>
-				<td><input type="text" id="status18" value="" readonly></td>
+				<td>2G. Obtain copy of Puchaser's IC with CTC</td>
+				<td><input type="text" class="form-control" id="date35" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date36" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status18" value="" readonly></td>
 				</tr>
 
   				<tr>
@@ -335,30 +334,30 @@
 		
   				<tr>
 				<td>      (i) Company's Form24</td>
-				<td><input type="date" class="form-control" id="date37" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date38" placeholder="date of completion"></td>
-				<td><input type="text" id="status19" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date37" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date38" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status19" value="" readonly></td>
 				</tr>
  
   				<tr>
 				<td>      (ii) Company's Form44</td>
-				<td><input type="date" class="form-control" id="date39" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date40" placeholder="date of completion"></td>
-				<td><input type="text" id="status20" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date39" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date40" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status20" value="" readonly></td>
 				</tr>
 
   				<tr>
 				<td>      (iii) Company's MAA</td>
-				<td><input type="date" class="form-control" id="date41" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date42" placeholder="date of completion"></td>
-				<td><input type="text" id="status21" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date41" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date42" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status21" value="" readonly></td>
 				</tr>
  
   				<tr>
 				<td>      (iv) Shareholders/Members/Directors resolution to finance property</td>
-				<td><input type="date" class="form-control" id="date43" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date44" placeholder="date of completion"></td>
-				<td><input type="text" id="status22" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date43" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date44" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status22" value="" readonly></td>
 				</tr>
 			
 				</tbody>
@@ -375,7 +374,7 @@
       </div>
       <div id="collapse4" class="panel-collapse collapse">
         <div class="panel-body">
-					<table width="auto" border="1">
+					<table width="auto" border="1" class="table table-striped table-hover ">
 				<tbody>
 				<tr>
 				<td width="380">Task</td>
@@ -387,16 +386,16 @@
  
   				<tr>
 				<td>2H. Forward loan documents to bank for bank execution.</td>
-				<td><input type="date" class="form-control" id="date45" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date46" placeholder="date of completion"></td>
-				<td><input type="text" id="status23" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date45" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date46" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status23" value="" readonly></td>
 				</tr>
  
   				<tr>
 				<td>2I. Request Letter of undertaking from bank addressed to Vendor</td>
-				<td><input type="date" class="form-control" id="date47" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date48" placeholder="date of completion"></td>
-				<td><input type="text" id="status24" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date47" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date48" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status24" value="" readonly></td>
 				</tr>
 			
 				</tbody>
@@ -414,7 +413,7 @@
       </div>
       <div id="collapse5" class="panel-collapse collapse">
         <div class="panel-body">
-					<table width="auto" border="1">
+					<table width="auto" border="1" class="table table-striped table-hover ">
 				<tbody>
 				<tr>
 				<td width="380">Task</td>
@@ -426,9 +425,9 @@
  
   				<tr>
 				<td>2J. Received Document executed accepted by bank & letter of undertaking from bank</td>
-				<td><input type="date" class="form-control" id="date49" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date50" placeholder="date of completion"></td>
-				<td><input type="text" id="status25" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date49" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date50" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status25" value="" readonly></td>
 				</tr>
 
 				<tr>
@@ -440,30 +439,30 @@
 				
   				<tr>
 				<td>- Request a copy of the consent to transfer from SNP Solicitor</td>
-				<td><input type="date" class="form-control" id="date51" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date52" placeholder="date of completion"></td>
-				<td><input type="text" id="status26" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date51" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date52" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status26" value="" readonly></td>
 				</tr>
 			
 				<tr>
 				<td>- Obtain a copy of the consent to transfer from SNP Solicitor</td>
-				<td><input type="date" class="form-control" id="date53" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date54" placeholder="date of completion"></td>
-				<td><input type="text" id="status27" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date53" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date54" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status27" value="" readonly></td>
 				</tr>
 			
 				<tr>
 				<td>- Submit consent to charge</td>
-				<td><input type="date" class="form-control" id="date55" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date56" placeholder="date of completion"></td>
-				<td><input type="text" id="status28" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date55" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date56" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status28" value="" readonly></td>
 				</tr>
 			
 				<tr>
 				<td>- Obtained consent to charge from land office</td>
-				<td><input type="date" class="form-control" id="date57" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date58" placeholder="date of completion"></td>
-				<td><input type="text" id="status29" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date57" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date58" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status29" value="" readonly></td>
 				</tr>
 				
 
@@ -478,44 +477,44 @@
 				
   				<tr>
 				<td>- Received redemption statement</td>
-				<td><input type="date" class="form-control" id="date59" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date60" placeholder="date of completion"></td>
-				<td><input type="text" id="status30" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date59" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date60" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status30" value="" readonly></td>
 				</tr>
 			
 				<tr>
 				<td>- Vendor's Letter of undertaking</td>
-				<td><input type="date" class="form-control" id="date61" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date62" placeholder="date of completion"></td>
-				<td><input type="text" id="status31" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date61" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date62" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status31" value="" readonly></td>
 				</tr>
 			
 				<tr>
 				<td>- Obtain Quit rent & assessment</td>
-				<td><input type="date" class="form-control" id="date63" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date64" placeholder="date of completion"></td>
-				<td><input type="text" id="status32" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date63" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date64" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status32" value="" readonly></td>
 				</tr>
 			
 				<tr>
-				<td>- Vendor's and Purchaser's IC</td>
-				<td><input type="date" class="form-control" id="date65" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date66" placeholder="date of completion"></td>
-				<td><input type="text" id="status33" value="" readonly></td>
+				<td>- Vendor's and purchaser's IC</td>
+				<td><input type="text" class="form-control" id="date65" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date66" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status33" value="" readonly></td>
 				</tr>
 			
 				<tr>
 				<td>- Copy of adjudicated MOT</td>
-				<td><input type="date" class="form-control" id="date67" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date68" placeholder="date of completion"></td>
-				<td><input type="text" id="status34" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date67" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date68" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status34" value="" readonly></td>
 				</tr>
 			
 				<tr>
 				<td>- Conduct Bankruptcy search</td>
-				<td><input type="date" class="form-control" id="date69" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date70" placeholder="date of completion"></td>
-				<td><input type="text" id="status35" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date69" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date70" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status35" value="" readonly></td>
 				</tr>		
 			
 			
@@ -534,7 +533,7 @@
       </div>
       <div id="collapse6" class="panel-collapse collapse">
         <div class="panel-body">
-					<table width="auto" border="1">
+					<table width="auto" border="1" class="table table-striped table-hover ">
 				<tbody>
 				<tr>
 				<td width="380">Task</td>
@@ -546,9 +545,9 @@
  
   				<tr>
 				<td>2L. Produce all relevant documents to stamp duty office</td>
-				<td><input type="date" class="form-control" id="date71" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date72" placeholder="date of completion"></td>
-				<td><input type="text" id="status36" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date71" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date72" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status36" value="" readonly></td>
 				</tr>
 
   				<tr>
@@ -574,27 +573,27 @@
 
   				<tr>
 				<td>2M. Advise to bank (as per bank format) to release the redemption sum</td>
-				<td><input type="date" class="form-control" id="date73" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date74" placeholder="date of completion"></td>
-				<td><input type="text" id="status37" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date73" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date74" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status37" value="" readonly></td>
 				</tr>
 
   				<tr>
 				<td>2N. Release / Forward redemption sum to Vendor financial (Vendor's solicitor)</td>
-				<td><input type="date" class="form-control" id="date75" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date76" placeholder="date of completion"></td>
-				<td><input type="text" id="status38" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date75" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date76" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status38" value="" readonly></td>
 				</tr>
 
   				<tr>
 				<td>2O. Obtained documents from Vendor's solicitor/ Purchaser's solicitor:</td>
-				<td><input type="date" class="form-control" id="date77" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date78" placeholder="date of completion"></td>
-				<td><input type="text" id="status39" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date77" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date78" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status39" value="" readonly></td>
 				</tr>
 
   				<tr>
-				<td> - For Vendor's solicitor</td>
+				<td> - For Vendor's solicitor:</td>
 				<td></td>
 				<td></td>
 				<td></td>
@@ -602,9 +601,9 @@
 
   				<tr>
 				<td> Title, Duplicate charge, Discharge of Charge, registration fee.</td>
-				<td><input type="date" class="form-control" id="date79" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date80" placeholder="date of completion"></td>
-				<td><input type="text" id="status40" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date79" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date80" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status40" value="" readonly></td>
 				</tr>				
 				
   				<tr>
@@ -616,16 +615,16 @@
 
   				<tr>
 				<td> 14A (MOT), Duly paid full stamp duty, registration fee.</td>
-				<td><input type="date" class="form-control" id="date81" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date82" placeholder="date of completion"></td>
-				<td><input type="text" id="status41" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date81" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date82" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status41" value="" readonly></td>
 				</tr>
 
   				<tr>
 				<td>2P. Send Form 16A & Charge Annexure for endorsement</td>
-				<td><input type="date" class="form-control" id="date83" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date84" placeholder="date of completion"></td>
-				<td><input type="text" id="status42" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date83" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date84" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status42" value="" readonly></td>
 				</tr>				
 
 				
@@ -644,7 +643,7 @@
       </div>
       <div id="collapse7" class="panel-collapse collapse">
         <div class="panel-body">
-					<table width="auto" border="1">
+					<table width="auto" border="1" class="table table-striped table-hover ">
 				<tbody>
 				<tr>
 				<td width="380">Task</td>
@@ -656,58 +655,58 @@
  
   				<tr>
 				<td>2Q. Presentation title and charge in Land Office</td>
-				<td><input type="date" class="form-control" id="date85" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date86" placeholder="date of completion"></td>
-				<td><input type="text" id="status43" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date85" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date86" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status43" value="" readonly></td>
 				</tr>
 
   				<tr>
 				<td>2R. Advise to  bank to release balance loan sum</td>
-				<td><input type="date" class="form-control" id="date87" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date88" placeholder="date of completion"></td>
-				<td><input type="text" id="status44" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date87" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date88" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status44" value="" readonly></td>
 				</tr>	
 		
   				<tr>
 				<td>2S. Forward balance loan sum to Vendor's OR Purchaser's Solicitors</td>
-				<td><input type="date" class="form-control" id="date89" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date90" placeholder="date of completion"></td>
-				<td><input type="text" id="status45" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date89" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date90" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status45" value="" readonly></td>
 				</tr>		
 
 				<td>2T. Collection of Original Title from Land Office</td>
-				<td><input type="date" class="form-control" id="date91" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date92" placeholder="date of completion"></td>
-				<td><input type="text" id="status46" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date91" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date92" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status46" value="" readonly></td>
 				</tr>	
 		
   				<tr>
 				<td>2U. Collection of Original MOT from Land Office</td>
-				<td><input type="date" class="form-control" id="date93" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date94" placeholder="date of completion"></td>
-				<td><input type="text" id="status47" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date93" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date94" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status47" value="" readonly></td>
 				</tr>
 
 				<td>2V. Forward loan document and title to Borrower</td>
-				<td><input type="date" class="form-control" id="date95" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date96" placeholder="date of completion"></td>
-				<td><input type="text" id="status48" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date95" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date96" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status48" value="" readonly></td>
 				</tr>	
 		
   				<tr>
 				<td>2W. Forward Original Title and Stamped Duplicated Charge to the Bank</td>
-				<td><input type="date" class="form-control" id="date97" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date98" placeholder="date of completion"></td>
-				<td><input type="text" id="status49" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date97" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date98" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status49" value="" readonly></td>
 				</tr>
 
   				<tr>
 				<td>- CC. a copy to the Purchaser/Borrower</td>
-				<td><input type="date" class="form-control" id="date99" placeholder="date of deadline"></td>
-				<td><input type="date" class="form-control"id="date100" placeholder="date of completion"></td>
-				<td><input type="text" id="status50" value="" readonly></td>
+				<td><input type="text" class="form-control" id="date99" placeholder="date of deadline"></td>
+				<td><input type="text" class="form-control" id="date100" placeholder="date of completion"></td>
+				<td><input type="text" class="form-control" id="status50" value="" readonly></td>
 				</tr>
-						
+				
 				</tbody>
 			</table>
 		
@@ -722,7 +721,7 @@
 			<!--Submit button added-->
 			<div class="form-group row" align="center">
               <div class="col-lg-12" align="center">                
-                <button type="submit" class="button default">UPDATE</button>
+                <button type="submit" class="btn btn-primary" >UPDATE</button>
 	
 
 			  </div>
@@ -744,13 +743,9 @@
       </p>
     </footer>
 
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
 
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
 	<script src="js/script2update4.js"></script>
 	
 
